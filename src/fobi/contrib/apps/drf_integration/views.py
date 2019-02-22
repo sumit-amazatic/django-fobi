@@ -2,6 +2,8 @@
 from django.contrib import messages
 from django.http import HttpRequest
 from django.utils.translation import ugettext
+from django.views.decorators.csrf import csrf_exempt
+
 
 from nine import versions
 
@@ -34,7 +36,7 @@ __copyright__ = '2014-2018 Artur Barseghyan'
 __license__ = 'GPL 2.0/LGPL 2.1'
 __all__ = ('FobiFormEntryViewSet',)
 
-
+@csrf_exempt
 class FobiFormEntryViewSet(
     # mixins.CreateModelMixin,
     mixins.RetrieveModelMixin,
